@@ -1,0 +1,241 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto';
+    height: 1700px;
+    width: 100%;
+    
+}
+
+a:link, a:active, a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    height: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-top: 30px;
+}
+
+h1{
+    color: white;
+    font-weight: 300;
+}
+
+nav ul{
+    font-size: 1rem;
+}
+
+nav ul li{
+    float: left;
+}
+
+nav ul li a:link{
+    display: block;
+    margin-right: 25px;
+    padding-bottom: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    border-bottom: 1px solid white;
+}
+
+video{
+    position: absolute;
+    top: 100px;
+    left: 365px;
+}
+
+aside{
+    position: absolute;
+    top: 100px;
+    right: 375px;
+    width: 450px;
+    height: 360px;
+    margin-right: 10px;
+    
+}
+
+#programacao{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h4{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#programacao ul{
+    width: 100%;
+    list-style: none;
+}
+
+#programacao ul li{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.data{
+    float: right;
+}
+
+#simbolo img{
+    position: absolute;
+    top: 490px;
+    left: 365px;
+    width: 335px;
+    height: 344px;
+}
+
+#foto img{
+    position: absolute;
+    top: 494px;
+    left: 700px;
+    width: 335px;
+    height: 336px;
+}
+
+
+article#texto{
+    width: 670px;
+    height: 246px;
+    position: absolute;
+    left: 365px;
+    top: 850px;
+    text-align: justify;
+    align-items: center;
+}
+
+#texto p{
+    font-size: 1.3rem;
+    padding: 15px;
+}
+
+section#galeria{
+    position: absolute;
+    left: 365px;
+    width: 1154px;
+    top: 1030px;
+    height: 580px;
+    background-color: black;
+}
+
+#galeria img{
+    margin: 25px;
+    float: left;
+    width: 237px;
+    height: 237px;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    top: 1700px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+}
+
+footer a:link{
+    text-decoration: underline;
+}
+
+
+/* PAGINA CONTATO */
+
+#contato{
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: 355px;
+    width: 1170px;
+    height: 847px;
+    box-shadow: 1px 1px 20px 8px black
+}
+
+h2{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 55px;
+}
+
+#cont ul li{
+    text-align: justify;
+    list-style: none;
+    
+}
+
+#cont a{
+    color: black;
+    font-weight: bold;
+}
+
+#cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form{
+    margin-top: 50px;
+    color: white;
+    background-color: black;
+    width: 450px;
+    /* margin: 0 auto; */
+    /* margin-bottom: 50px; */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #ccc
+}
+
+input, textarea{
+    padding: 10px;
+    margin-bottom: 15px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+label{
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+input[type="submit"]{
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+}
+
+input[type="submit"]:hover{
+    transition: 0.5s;
+    background-color: green;
+    color: white;
+    border: none;
+}

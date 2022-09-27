@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>MUSEU NACIONAL</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>MUSEU NACIONAL</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#programacao">PROGRAMAÇÃO</a></li>
+                <li><a href="#">ACERVO</a></li>
+                <li><a href="index.html#galeria">GALERIA</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="contato">
+        <h2>ALGUMA DUVIDA? CONTATE-NOS</h1>
+
+            <div id="cont">
+                <ul>
+                    <li>Me siga no instagram: <a href="https://www.instagram.com/arthurdamacena/"
+                            target="_blank">@arthurdamacena</a></li>
+                    <li>Se quiser um email direto: <a href=""
+                            onclick="alert('Sempre olho meus email às 13h!')">email@email.com</a></li>
+                    <li>Se quiser conectar no linkedin: <a href="https://www.linkedin.com/in/arthurdamacena"
+                            target="_blank">in/arthurdamacena</a></li>
+                </ul>
+
+
+
+                <form action="">
+
+                    <label for="nome">Nome:</label>
+
+                    <input type="text" name="nome" id="" value="" placeholder="Digite seu nome completo">
+
+
+                    <label for="cpf">CPF:</label>
+
+                    <input onblur="validarCPF(this)" type="text" name="cpf" id="" value="" maxlength=""
+                        placeholder="Digite seu CPF">
+
+
+                    <label for="email">Email:</label>
+
+                    <input type="email" name="email" id="" placeholder="seuemail@email.com"
+                        onblur="validacaoEmail(this)">
+
+
+                    <label for="telefone">Telefone:</label>
+
+                    <input type="tel" name="telefone" id="" placeholder="(99)99999-9999"
+                        pattern="^\(?\d{2}\)\d{5}[-\s]\d{4}.*?$">
+
+
+                    <label for="msg">Mensagem:</label>
+
+                    <textarea name="observ" id="" cols="100" rows="10" placeholder="Digite aqui!"></textarea>
+
+                    <div id="botoes">
+                        <input type="submit" name="bt-pedir" id="" value="Enviar"
+                            onclick="alert('Mensagem enviada com sucesso!')">
+                    </div>
+            </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2022 <a href="https://www.linkedin.com/in/arthurdamacena" target="_blank">Arthur Damacena</a>.
+            Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+<script>
+    function _cpf(cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+        if (cpf == '') return false;
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            return false;
+        add = 0;
+        for (i = 0; i < 9; i++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            return false;
+        add = 0;
+        for (i = 0; i < 10; i++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(10)))
+            return false;
+        return true;
+    }
+
+    function validarCPF(el) {
+        if (!_cpf(el.value)) {
+
+            alert("CPF inválido! " + el.value);
+
+            el.value = "";
+        }
+    }
+</script>
+<script>
+    function validacaoEmail(field) {
+        usuario = field.value.substring(0, field.value.indexOf("@"));
+        dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+        if ((usuario.length >= 1) &&
+            (dominio.length >= 3) &&
+            (usuario.search("@") == -1) &&
+            (dominio.search("@") == -1) &&
+            (usuario.search(" ") == -1) &&
+            (dominio.search(" ") == -1) &&
+            (dominio.search(".") != -1) &&
+            (dominio.indexOf(".") >= 1) &&
+            (dominio.lastIndexOf(".") < dominio.length - 1)) {
+            document.getElementById("msgemail").innerHTML = "E-mail válido";
+            alert("E-mail valido");
+        } else {
+            document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
+            alert("E-mail invalido");
+        }
+    }
+</script>
+
+</html>
